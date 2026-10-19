@@ -1,0 +1,108 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+:root {
+  --radius: 1.25rem;
+
+  --background: #f3f5f0;
+  --foreground: #12282d;
+  --card: #f3f5f0;
+  --card-foreground: #12282d;
+  --popover: #f3f5f0;
+  --popover-foreground: #12282d;
+  --primary: #0e2f36;
+  --primary-foreground: #f3f5f0;
+  --secondary: #e6ebe4;
+  --secondary-foreground: #12282d;
+  --muted: #e6ebe4;
+  --muted-foreground: #5f7378;
+  --accent: #e6ebe4;
+  --accent-foreground: #12282d;
+  --destructive: #c2372c;
+  --border: #d5ddd4;
+  --input: #d5ddd4;
+  --ring: #f2a922;
+
+  --page: #0e2f36;
+  --page-foreground: #b9d3cf;
+  --overlay: rgb(6 26 31 / 0.6);
+  --surface: #ffffff;
+  --ink-soft: #4b6166;
+  --placeholder: #b7c2bd;
+  --highlight: #f2a922;
+  --highlight-strong: #e0960c;
+  --highlight-soft: #fdf3df;
+  --destructive-soft: #fbe8e5;
+  --disabled: #d3dbd5;
+}
+
+@theme inline {
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Bricolage Grotesque Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 6px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-page: var(--page);
+  --color-page-foreground: var(--page-foreground);
+  --color-overlay: var(--overlay);
+  --color-surface: var(--surface);
+  --color-ink-soft: var(--ink-soft);
+  --color-placeholder: var(--placeholder);
+  --color-highlight: var(--highlight);
+  --color-highlight-strong: var(--highlight-strong);
+  --color-highlight-soft: var(--highlight-soft);
+  --color-destructive-soft: var(--destructive-soft);
+  --color-disabled: var(--disabled);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-page text-page-foreground font-sans antialiased;
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
